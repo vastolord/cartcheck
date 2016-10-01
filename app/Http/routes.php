@@ -19,6 +19,8 @@
 Route::group(['middleware'=>'web'], function(){
 
     Route::resource('/','ProductController');
+    Route::resource('/cart/{id}','ProductController@show',['names' => ['create' => 'cart']]);
+
 
 
 });

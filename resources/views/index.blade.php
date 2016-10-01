@@ -15,7 +15,7 @@ Shopping cart
                             <h3>{{$products->title}}</h3>
                             <p class="description">{{$products->description}}</p>
                             <div class="price pull-left">{{$products->price}}</div>
-                            <div class="clearfix"><a href="#" class="btn btn-success pull-right" role="button">Add to cart</a>
+                            <div class="clearfix"><a href="{{route('cart',['id'=>$products->id])}}" class="btn btn-success pull-right" role="button">Add to cart</a>
                             </div>
                         </div>
                     </div>

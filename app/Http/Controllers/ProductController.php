@@ -56,8 +56,22 @@ class ProductController extends Controller
         $cart=new Cart($oldcart);
         $cart->add($product,$product->id);
         $request->session()->put('cart',$cart);
-        
+        //dd(Session::get('cart'));
+        //$request->session()->flush();
+
+
+
         return redirect('/');
+    }
+    public function getCart()
+    {
+             if(!Session::has('cart')){
+                 return view('cart');
+             }
+        $oldcart=Session::get('cart');
+        $cart=new Cart($oldcart);
+        return view('cart',['products'=>$cart->items,'totalprice'=>$cart->totalPrice]);
+
     }
 
     /**

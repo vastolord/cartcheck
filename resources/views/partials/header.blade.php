@@ -8,7 +8,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Brand</a>
+            <a class="navbar-brand" href="/">Brand</a>
         </div>
 
         <!-- Collapsed Hamburger -->
@@ -44,7 +44,7 @@
                 <button type="submit" class="btn btn-default">Submit</button>
             </form>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Shopping Cart
+                <li><a href="{{route('shop.cart')}}"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Shopping Cart
                     <span class="badge">{{Session::has('cart') ? Session::get('cart')->totalQty : ''}}</span>
                     </a></li>
                 <li class="dropdown">

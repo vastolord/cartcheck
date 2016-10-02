@@ -19,11 +19,17 @@
 Route::group(['middleware'=>'web'], function(){
 
     Route::resource('/','ProductController');
-    Route::resource('/cart/{id}','ProductController@show',['names' => ['create' => 'cart']]);
+    Route::get('/cart/{id}',['uses'=>'ProductController@show','as' =>'cart']);
+   
 
 
 
 });
+Route::get('shop-cart-check',[
+    'uses'=>'ProductController@getCart',
+    'as'=>'shop.cart'
+
+]);
 Route::auth();
 
 Route::get('/home', 'HomeController@index');
